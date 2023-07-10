@@ -81,12 +81,12 @@ fun CardContent(activeUsagePeriodDataSource: ActiveUsagePeriodDataSource) {
     LaunchedEffect(Unit) {
         val lockingInfo = activeUsagePeriodDataSource.getLockingInfo()
         val currentTime = OffsetDateTime.now()
-        val remainingDuration = Duration.between(currentTime, lockingInfo.lockTime)
+        var remainingDuration = Duration.between(currentTime, lockingInfo.lockTime)
 
         while (remainingDuration.isNegative.not()) {
             remainingTime.value = helperUtil.formatDuration(remainingDuration)
             delay(1000)
-            remainingDuration.minusSeconds(1)
+            remainingDuration = remainingDuration.minusSeconds(1) // Assign the updated duration back to remainingDuration
         }
     }
 
