@@ -24,6 +24,7 @@ private val DarkColorScheme = darkColorScheme(
     surface = darkBg,
     onSurface = darkTextColor,
     background = darkBg,
+    onBackground = darkTextColor
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -34,7 +35,8 @@ private val LightColorScheme = lightColorScheme(
     tertiary = tertiaryColor,
     surface = lightBg,
     onSurface = lightTextColor,
-    background = lightBg
+    background = lightBg,
+    onBackground = lightTextColor
 )
 
 @Composable
@@ -57,8 +59,11 @@ fun MLockerTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            window.statusBarColor = colorScheme.background.toArgb()
+            window.navigationBarColor = colorScheme.background.toArgb()
+            // light mode : Let's make StatusBar items & Nav controllers visible
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
+            WindowCompat.getInsetsController(window, view).isAppearanceLightNavigationBars = !darkTheme
         }
     }
 
