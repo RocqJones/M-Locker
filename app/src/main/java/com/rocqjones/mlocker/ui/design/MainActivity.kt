@@ -1,4 +1,4 @@
-package com.rocqjones.mlocker
+package com.rocqjones.mlocker.ui.design
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
