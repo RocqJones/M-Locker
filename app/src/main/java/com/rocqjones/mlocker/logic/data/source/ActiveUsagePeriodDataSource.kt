@@ -8,7 +8,7 @@ class ActiveUsagePeriodDataSource {
     suspend fun getLockingInfo() : ActiveUsagePeriod {
         delay(500) // Simulates a network call
         return ActiveUsagePeriod(
-            OffsetDateTime.now().withHour(23).withMinute(0).withSecond(0)
+            OffsetDateTime.now().withHour(24).withMinute(0).withSecond(0)
         )
     }
 }

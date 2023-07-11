@@ -1,9 +1,9 @@
 package com.rocqjones.mlocker.logic.data.source
 
-import com.rocqjones.mlocker.logic.data.enums.CountryIsoCode
+import com.rocqjones.mlocker.logic.data.models.CountryIsoCodeModel
 
 class CountryIsoCodeDataSource {
-    suspend fun getCountryIsoCode() : CountryIsoCode {
-        return CountryIsoCode.KE
+    fun getCountryIsoCode() : CountryIsoCodeModel {
+        return CountryIsoCodeModel("KE")
     }
 }
