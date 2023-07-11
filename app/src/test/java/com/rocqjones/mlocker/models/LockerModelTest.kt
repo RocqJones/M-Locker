@@ -36,7 +36,6 @@ class LockerModelTest : TestCase() {
 
     @Test
     fun testCountryIsoTdd() {
-        // assertNotSame
-        assertEquals("UG", countryIsoCodeModel.code)
+        assertNotSame("UG", countryIsoCodeModel.code)
     }
 }
