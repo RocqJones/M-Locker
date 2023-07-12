@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -86,7 +87,7 @@ fun ShowCountDownTimer(
     )
 
     Box(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth().testTag("composeCountdownBox"),
         contentAlignment = Alignment.Center
     ) {
         CardContent(activeUsagePeriodDataSource, countryIsoCodeDataSource, viewModel)
@@ -142,16 +143,18 @@ fun CardContent(
 
     Card(
         colors = CardDefaults.cardColors(containerColor = cardColor),
-        modifier = Modifier.wrapContentSize()
-            .padding(vertical = 4.dp, horizontal = 4.dp)
-            .border(1.dp, Color.Black, shape = MaterialTheme.shapes.medium)
+        modifier = Modifier.wrapContentSize().padding(
+            vertical = 4.dp, horizontal = 4.dp
+        ).border(1.dp, Color.Black, shape = MaterialTheme.shapes.medium).testTag("composeCardMain")
     ) {
         Text(
             text = remainingTime.value,
             style = MaterialTheme.typography.headlineMedium.copy(
                 fontWeight = FontWeight.SemiBold
             ),
-            modifier = Modifier.padding(vertical = 32.dp, horizontal = 32.dp)
+            modifier = Modifier.padding(
+                vertical = 32.dp, horizontal = 32.dp
+            ).testTag("composeCounterText")
         )
     }
 }
