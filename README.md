@@ -18,6 +18,9 @@ Let's build a device-locking countdown timer app with Jetpack Compose.
 Used `Android CI` from the GitHub marketplace for Continuous Integration and Continuous Deployment
 - Configured to run Unit Tests.
 - We can easily track actions [from GitHub Actions of this repo](https://github.com/RocqJones/M-Locker/actions)
+- Below is  a screenshot.
+![image](https://github.com/RocqJones/M-Locker/assets/32324500/bace6121-73c0-486e-8b24-1d08ed9ff22f)
+
 
 ### Android UI Test Results
 ![image](https://github.com/RocqJones/M-Locker/assets/32324500/005b0832-2ef1-4867-971e-8cd3d02fa3ec)
